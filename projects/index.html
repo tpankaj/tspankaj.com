@@ -1,7 +1,7 @@
 <?php
    if (isset($_GET['id'])) {
-       echo $_SERVER['DOCUMENT_ROOT'] . "/projects/viewer.html";
+       include $_SERVER['DOCUMENT_ROOT'] . "/projects/viewer.html";
    } else {
-       echo $_SERVER['DOCUMENT_ROOT'] . "/projects/listing.html";
+       include $_SERVER['DOCUMENT_ROOT'] . "/projects/listing.html";
    }
    ?>
