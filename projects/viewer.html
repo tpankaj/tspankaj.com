@@ -1,7 +1,7 @@
 <?php
    $article_id = $_GET['id'];
    include_once($_SERVER['DOCUMENT_ROOT'] . "/projects/config.html");
-   include_once($_SERVER['DOCUMENT_ROOT'] . "/lib/Markdown.php");
+   require_once($_SERVER['DOCUMENT_ROOT'] . "/lib/Markdown.php");
    ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +21,7 @@
        }
 
        fclose($articlefile);
-
+       echo "file closed.";
        echo Markdown::defaultTransform($articlecontents);
        ?>
 
