@@ -1,16 +1,16 @@
 <?php
-   function tidyhtml($input) {
-       $config = array(
-               'indent'       => true,
-               'wrap'         => 80);
+//   function tidyhtml($input) {
+//         $config = array(
+//               'indent'       => true,
+//               'wrap'         => 80);
 
 
-       $tidy = new tidy;
-       $tidy->parseString($input, $config, 'utf8');
-       $tidy->cleanRepair();
+//       $tidy = new tidy;
+//       $tidy->parseString($input, $config, 'utf8');
+//       $tidy->cleanRepair();
 
-       return $tidy;
-   }
+//       return $tidy;
+//   }
 
-   ob_start("tidyhtml");
+//   ob_start("tidyhtml");
    ?>
