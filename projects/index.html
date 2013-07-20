@@ -1,7 +1,9 @@
 <?php
    if (isset($_GET['id'])) {
+       echo "id was set";
        include_once($_SERVER['DOCUMENT_ROOT'] . "/projects/viewer.html");
    } else {
+       echo "id was not set";
        include_once($_SERVER['DOCUMENT_ROOT'] . "/projects/listing.html");
    }
    ?>
