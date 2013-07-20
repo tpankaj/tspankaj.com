@@ -1,0 +1,14 @@
+<?php
+   $article_id = $_GET['id']
+   include_once($_SERVER['DOCUMENT_ROOT'] . "/projects/config.html")
+   ?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><?php echo $projects_titles[$article_id]; ?> - Tushar Pankaj</title>
+    <?php include_once($_SERVER['DOCUMENT_ROOT'] . "/common/header.html"); ?>
+  </head>
+  <body>
+    <?php include_once($_SERVER['DOCUMENT_ROOT'] . "/common/footer.html"); ?>
+  </body>
+</html>
