@@ -1,22 +1,4 @@
-<?php
-   function tidyhtml($input) {
-       $config = array(
-               'indent'       => true,
-               'wrap'         => 80);
-
-
-       $tidy = new tidy;
-       $tidy->parseString($input, $config, 'utf8');
-       $tidy->cleanRepair();
-
-       return $tidy;
-   }
-
-   ob_start("tidyhtml");
-   ?>
 <!DOCTYPE html>
-<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 
 <head>
   <title>Foundation 4</title>
@@ -107,4 +89,3 @@
 	<?php include_once($_SERVER['DOCUMENT_ROOT'] . "/common/footer.html"); ?>
 </body>
 </html>
-<?php ob_end_flush(); ?>
