@@ -1,6 +1,7 @@
 <?php
    $article_id = $_GET['id'];
    include_once($_SERVER['DOCUMENT_ROOT'] . "/projects/config.html");
+   include_once($_SERVER['DOCUMENT_ROOT'] . "/lib/Markdown.php");
    ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,6 +10,21 @@
     <?php include_once($_SERVER['DOCUMENT_ROOT'] . "/common/header.html"); ?>
   </head>
   <body>
+
+    <?php include_once($_SERVER['DOCUMENT_ROOT'] . "/common/navbar.html"); ?>
+
+    <?php
+       $articlefile = fopen($_SERVER['DOCUMENT_ROOT'] . "/projects/articles/" . $projects_files[$article_id], "r");
+
+       while (!feof($articlefile)) {
+           $articlecontents .= fgets($articlefile) . "\n";
+       }
+
+       fclose($articlefile);
+
+       echo Markdown::defaultTransform($articlecontents);
+       ?>
+
     <?php include_once($_SERVER['DOCUMENT_ROOT'] . "/common/footer.html"); ?>
   </body>
 </html>
