@@ -10,15 +10,15 @@
     <ul class="right">
       <li class="divider hide-for-small"></li>
       <li class="has-dropdown"><a href="/projects">Projects</a>
-
 	<ul class="dropdown">
 	  <?php
 	     include_once($_SERVER['DOCUMENT_ROOT'] . "/projects/config.html");
 	     for ($i = 0; $i < count($projects_files); $i++) {
-	         echo "<a href=\"/projects/articles/" . $projects_files[$i] . "\">" . $projects_titles[$i] . "</a>\n";
+	         echo "<li><a href=\"/projects/articles/" . $projects_files[$i] . "\">" . $projects_titles[$i] . "</a></li>\n";
 	     }
 	     ?>
 	</ul>
+      </li>
     </ul>
   </section>
 </nav>
