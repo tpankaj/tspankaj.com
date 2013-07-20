@@ -1,3 +1,1 @@
-# FRC Targeting
-## Other Information
-Hello.
+## FRC Targeting

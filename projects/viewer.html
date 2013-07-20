@@ -14,14 +14,6 @@
     <?php include_once($_SERVER['DOCUMENT_ROOT'] . "/common/navbar.html"); ?>
 
     <?php
-//       $articlefile = fopen($_SERVER['DOCUMENT_ROOT'] . "/projects/articles/" . $projects_files[$article_id], "r");
-
-//       while (!feof($articlefile)) {
-//           $articlecontents .= fgets($articlefile) . "\n";
-//       }
-
-//       fclose($articlefile);
-//       echo "file closed.";
        echo \Michelf\Markdown::defaultTransform(file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/projects/articles/" . $projects_files[$article_id]));
        ?>
 
