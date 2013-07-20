@@ -1,7 +1,8 @@
 <?php
    if (isset($_GET['id'])) {
-       include $_SERVER['DOCUMENT_ROOT'] . "/projects/viewer.html";
+       $include_url = $_SERVER['DOCUMENT_ROOT'] . "/projects/viewer.html";
    } else {
-       include $_SERVER['DOCUMENT_ROOT'] . "/projects/listing.html";
+       $include_url = $_SERVER['DOCUMENT_ROOT'] . "/projects/listing.html";
    }
+   include_once($include_url);
    ?>
