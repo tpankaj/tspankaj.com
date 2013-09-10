@@ -1,8 +1,24 @@
 <?php
-   if (isset($_GET['id'])) {
-       $include_url = $_SERVER['DOCUMENT_ROOT'] . "/projects/viewer.html";
-   } else {
-       $include_url = $_SERVER['DOCUMENT_ROOT'] . "/projects/listing.html";
-   }
-   include_once($include_url);
+   include_once($_SERVER['DOCUMENT_ROOT'] . "/projects/articles.html");
    ?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><?php echo $projects_titles[$article_id]; ?> - Tushar Pankaj</title>
+    <?php include_once($_SERVER['DOCUMENT_ROOT'] . "/common/header.html"); ?>
+  </head>
+  <body>
+
+    <div class="row">
+      <div class="large-12 columns">
+	<?php
+	   for ($i = 0; $i < count($projects_files); $i++) {
+	       echo "<h4>" . $projects_titles[$i] . "</h4><br />";
+	   }
+	   ?>
+      </div>
+    </div>
+
+    <?php include_once($_SERVER['DOCUMENT_ROOT'] . "/common/footer.html"); ?>
+  </body>
+</html>
