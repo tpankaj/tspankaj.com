@@ -1,6 +1,3 @@
-<?php
-   include_once($_SERVER['DOCUMENT_ROOT'] . "/projects/articles.html");
-   ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,6 +9,8 @@
     <div class="row">
       <div class="large-12 columns">
 	<?php
+	   $projects_files = array("frc-targeting.html");
+	   $projects_titles = array("FRC Targeting");
 	   echo count($projects_files);
 	   for ($i = 0; $i < count($projects_files); $i++) {
 	       echo "<h4>" . $projects_titles[$i] . "</h4><br />";
