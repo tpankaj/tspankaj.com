@@ -1,6 +1,6 @@
 import datetime
 from flask import *
-app = flask.Flask(__name__)
+app = Flask(__name__)
 
 @app.context_processor
 def get_date():
