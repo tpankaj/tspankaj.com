@@ -1,6 +1,13 @@
 import datetime
 from flask import *
+from flask.ext.mongoengine import *
+from models import *
 app = Flask(__name__)
+app.config['MONGODB_SETTINGS'] = {
+    'db': 'tspankaj'
+}
+db = MongoEngine(app)
+app.session_interface = MongoEngineSessionInterface(db)
 
 @app.context_processor
 def get_date():
