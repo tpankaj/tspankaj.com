@@ -5,8 +5,9 @@ app = flask.Flask(__name__)
 
 @app.route('/')
 def root():
-    projects = json.load(open('json/projects.json', 'r'))
-    return flask.render_template('index.html', projects=projects, year=datetime.datetime.today().year)
+    #projects = json.load(open('json/projects.json', 'r'))
+    #return flask.render_template('index.html', projects=projects, year=datetime.datetime.today().year)
+    return 'Hello, world!'
 
 @app.route('/projects/')
 def projects():
