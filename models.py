@@ -9,7 +9,6 @@ class Post(Document):
     published = BooleanField(required=True)
     author = ReferenceField(User, required=True, reverse_delete_rule=CASCADE)
     category = ReferenceField(Category, required=True)
-    meta = {'allow_inheritance': True}
 
 class User(Document):
     username = StringField(required=True, unique=True)
