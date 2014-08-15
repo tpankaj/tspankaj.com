@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block head %}
+    <title>{% block title %}{% endblock %} - Tushar Pankaj</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/foundation.css') }}">
+    <script src="{{ url_for('static', filename='js/vendor/custom.modernizr.js') }}"></script>
+    {% endblock %}
+  </head>
+  <body>
+    
+    <nav class="top-bar">
+      <ul class="title-area">
+	<li class="name">
+	  <h1><a href="/">Tushar Pankaj</a></h1>
+	</li>
+	<li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+      </ul>
+
+      <section class="top-bar-section">
+	<ul class="right">
+	  <li class="divider hide-for-small"></li>
+	  <li class="has-dropdown"><a href="/projects">Projects</a>
+	    <ul class="dropdown">
+	      {% for project in projects %}
+	      <li><a href="/projects/{{ project.url }}/">{{ project.name }}</a></li>
+	      {% endfor %}
+	    </ul>
+	  </li>
+	</ul>
+      </section>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+
+    {% block footer %}
+    <div id="footer" style="text-align:center;">
+      Copyright &copy; {{ year }} Tushar Pankaj
+    </div>
+    {% endblock %}
+    <script>
+      document.write('<script src=/static/js/vendor/'
+			      + ('__proto__' in {} ? 'zepto' : 'jquery')
+			      + '.js><\/script>');
+      </script>
+      <script src="{{ url_for('static', filename='js/foundation.min.js') }}"></script>
+      <script>
+	$(document).foundation();
+      </script>
+  </body>
+</html>

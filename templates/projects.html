@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Projects{% endblock %}
+{% block content %}
+<div class="row">
+  <div class="large-12 columns">
+    <h2>Projects</h2>
+    <p>
+      <ul>
+	{% for project in projects %}
+	<li><a href="/projects/{{ project.url }}/">{{ project.name }}</a></li>
+	{% endfor %}
+      </ul>
+    </p>
+  </div>
+</div>
+{% endblock %}
