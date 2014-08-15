@@ -12,7 +12,6 @@
       <div class="large-12 columns">
 	<?php
 	   include_once($_SERVER['DOCUMENT_ROOT'] . "/projects/config.html");
-	   echo count($projects_files);
 	   for ($i = 0; $i < count($projects_files); $i++) {
 	       echo "<h4>" . $projects_titles[$i] . "</h4><br />";
 	   }
