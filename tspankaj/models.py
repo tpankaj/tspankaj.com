@@ -1,5 +1,6 @@
 from flask import *
 from flask.ext.mongoengine import *
+from . import db
 
 class Post(db.Document):
     title = db.StringField(required=True, unique=True)
