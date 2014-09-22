@@ -9,7 +9,7 @@ def get_date():
 # THIS IS TEMPORARY
 @app.context_processor
 def get_projects():
-    return dict(projects=[{"name": "FRC Computer Vision", "url": "frc-computer-vision"}])
+    return dict(projects=[{"name": "FRC Targeting", "url": "frc-targeting"}])
 
 @app.route('/')
 def root():
@@ -19,9 +19,9 @@ def root():
 def projects():
     return render_template('projects.html')
 
-@app.route('/projects/frc-computer-vision/')
+@app.route('/projects/frc-targeting/')
 def project_page():
-    return render_template('frc-computer-vision.html')
+    return render_template('frc-targeting.html')
 
 @app.route('/robots.txt')
 def robots_txt():
