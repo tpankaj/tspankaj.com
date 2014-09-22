@@ -32,4 +32,4 @@ def humans_txt():
     return app.send_static_file('humans.txt')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=False)
