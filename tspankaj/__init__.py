@@ -13,12 +13,7 @@ bcrypt = Bcrypt(app)
 
 # Application imports
 #import tspankaj.models
-#import tspankaj.views
-
-# Quick fix
-@app.route('/')
-def index():
-    return 'Hello, world!'
+import tspankaj.views
 
 # Top-level context processors
 @app.context_processor
