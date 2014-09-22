@@ -6,22 +6,21 @@ app = flask.Flask(__name__)
 def get_date():
     return dict(year=datetime.datetime.today().year)
 
-# THIS IS TEMPORARY
-@app.context_processor
-def get_projects():
-    return dict(projects=[{"name": "FRC Targeting", "url": "frc-targeting"}])
-
 @app.route('/')
 def root():
-    return render_template('index.html')
+    projects = [{"name": "FRC Targeting", "url": "frc-targeting"}]
+    return render_template('index.html', projects=projects)
+    return 'Hello, world!'
 
 @app.route('/projects/')
 def projects():
-    return render_template('projects.html')
+    projects = [{"name": "FRC Targeting", "url": "frc-targeting"}]
+    return render_template('projects.html', projects=projects, year=datetime.datetime.today().year)
 
 @app.route('/projects/frc-targeting/')
 def project_page():
-    return render_template('frc-targeting.html')
+    projects = json.load(open('json/projects.json', 'r'))
+    return render_template('frc-targeting.html', projects=projects, year=datetime.datetime.today().year)
 
 @app.route('/robots.txt')
 def robots_txt():
