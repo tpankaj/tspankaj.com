@@ -1,26 +1,22 @@
 import datetime
-from flask import *
+import flask
 app = flask.Flask(__name__)
-
-@app.context_processor
-def get_date():
-    return dict(year=datetime.datetime.today().year)
 
 @app.route('/')
 def root():
     projects = [{"name": "FRC Targeting", "url": "frc-targeting"}]
-    return render_template('index.html', projects=projects)
+    return flask.render_template('index.html', projects=projects, year=datetime.datetime.today().year)
     return 'Hello, world!'
 
 @app.route('/projects/')
 def projects():
     projects = [{"name": "FRC Targeting", "url": "frc-targeting"}]
-    return render_template('projects.html', projects=projects, year=datetime.datetime.today().year)
+    return flask.render_template('projects.html', projects=projects, year=datetime.datetime.today().year)
 
 @app.route('/projects/frc-targeting/')
 def project_page():
     projects = json.load(open('json/projects.json', 'r'))
-    return render_template('frc-targeting.html', projects=projects, year=datetime.datetime.today().year)
+    return flask.render_template('frc-targeting.html', projects=projects, year=datetime.datetime.today().year)
 
 @app.route('/robots.txt')
 def robots_txt():
