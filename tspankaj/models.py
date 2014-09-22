@@ -1,6 +1,6 @@
 from flask import *
 from flask.ext.mongoengine import *
-from . import db
+from . import db, User, Category
 
 class Post(db.Document):
     title = db.StringField(required=True, unique=True)
@@ -8,8 +8,8 @@ class Post(db.Document):
     body = db.StringField(required=True)
     publish_date = db.DateTimeField(required=True)
     published = db.BooleanField(required=True)
-    author = db.ReferenceField('User', required=True, reverse_delete_rule=db.CASCADE)
-    category = db.ReferenceField('Category', required=True)
+    author = db.ReferenceField(db.User, required=True, reverse_delete_rule=CASCADE)
+    category = ReferenceField(db.Category, required=True)
 
 class Category(db.Document):
     name = db.StringField(required=True, unique=True)
