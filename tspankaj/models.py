@@ -8,7 +8,7 @@ class Post(db.Document):
     body = db.StringField(required=True)
     publish_date = db.DateTimeField(required=True)
     published = db.BooleanField(required=True)
-    author = db.ReferenceField('User', required=True, reverse_delete_rule=db.CASCADE)
+    author = db.ReferenceField('User', required=True, reverse_delete_rule=CASCADE)
     category = ReferenceField('Category', required=True)
 
 class Category(db.Document):
