@@ -1,3 +1,4 @@
+import json
 import datetime
 import flask
 app = flask.Flask(__name__)
@@ -10,7 +11,7 @@ def root():
 
 @app.route('/projects/')
 def projects():
-    projects = [{"name": "FRC Targeting", "url": "frc-targeting"}]
+    projects = json.load(open('json/projects.json', 'r'))
     return flask.render_template('projects.html', projects=projects, year=datetime.datetime.today().year)
 
 @app.route('/projects/frc-targeting/')
