@@ -14,7 +14,7 @@
 	  <?php
 	     include_once($_SERVER['DOCUMENT_ROOT'] . "/projects/config.html");
 	     for ($i = 0; $i < count($projects); $i++) {
-	         echo "<li><a href=\"/projects?id=" . $i . "\">" . $projects[$i][0] . "</a></li>\n";
+	         echo "<li><a href=\"/projects/" . $projects[$i][1] . "\">" . $projects[$i][0] . "</a></li>\n";
 	     }
 	     ?>
 	</ul>
