@@ -18,7 +18,7 @@
                    $project = $i;
                }
            }
-           echo $projects[$project][0];
+           include_once($_SERVER['DOCUMENT_ROOT'] . "/projects/articles/" . $projects[$project][1] . ".html");
        }
        else
        {
