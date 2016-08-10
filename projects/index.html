@@ -8,16 +8,33 @@
 
     <?php include_once($_SERVER['DOCUMENT_ROOT'] . "/common/navbar.html"); ?>
 
+    <?php
+	   include_once($_SERVER['DOCUMENT_ROOT'] . "/projects/config.html");       
+       if (isset($_GET["project"])
+       {
+           for ($i = 0; $i < count($projects); $i++) {
+               if ($projects[$i][1] == $_GET["project"])
+               {
+                   $project = $i;
+               }
+           }
+           echo $projects[$project][0];
+       }
+       else
+       {
+       ?>
     <div class="row">
       <div class="large-12 columns">
 	<?php
-	   include_once($_SERVER['DOCUMENT_ROOT'] . "/projects/config.html");
 	   for ($i = 0; $i < count($projects); $i++) {
 	       echo "<h4>" . $projects[$i][0] . "</h4><br />";
 	   }
 	   ?>
       </div>
     </div>
+    <?php
+       }
+       ?>
 
     <?php include_once($_SERVER['DOCUMENT_ROOT'] . "/common/footer.html"); ?>
   </body>

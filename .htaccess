@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^projects/([A-Za-z0-9-+)/?$ /projects/index.html?project=$1 [L]
