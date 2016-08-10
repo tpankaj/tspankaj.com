@@ -10,7 +10,7 @@
 
     <?php
 	   include_once($_SERVER['DOCUMENT_ROOT'] . "/projects/config.html");       
-       if (isset($_GET["project"])
+       if (isset($_GET["project"]))
        {
            for ($i = 0; $i < count($projects); $i++) {
                if ($projects[$i][1] == $_GET["project"])
