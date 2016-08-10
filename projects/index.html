@@ -1,7 +1,32 @@
+<?php
+   include_once($_SERVER['DOCUMENT_ROOT'] . "/projects/config.html");       
+   if (isset($_GET["project"]))
+   {
+       for ($i = 0; $i < count($projects); $i++) {
+           if ($projects[$i][1] == $_GET["project"])
+           {
+               $project = $i;
+           }
+       }
+   }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <?php
+       if (isset($project))
+       {
+       ?>
+    <title><?php echo $projects[$project][0]; ?> - Tushar Pankaj</title>
+    <?php
+       }
+       else
+       {
+       ?>
     <title>Projects - Tushar Pankaj</title>
+    <?php
+       }
+       ?>
     <?php include_once($_SERVER['DOCUMENT_ROOT'] . "/common/header.html"); ?>
   </head>
   <body>
@@ -10,14 +35,8 @@
 
     <?php
 	   include_once($_SERVER['DOCUMENT_ROOT'] . "/projects/config.html");       
-       if (isset($_GET["project"]))
+       if (isset($project))
        {
-           for ($i = 0; $i < count($projects); $i++) {
-               if ($projects[$i][1] == $_GET["project"])
-               {
-                   $project = $i;
-               }
-           }
            include_once($_SERVER['DOCUMENT_ROOT'] . "/projects/articles/" . $projects[$project][1] . ".html");
        }
        else
