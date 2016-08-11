@@ -44,11 +44,13 @@
        ?>
     <div class="row">
       <div class="large-12 columns">
-	<?php
-	   for ($i = 0; $i < count($projects); $i++) {
-	       echo "<h4>" . $projects[$i][0] . "</h4><br />";
-	   }
-	   ?>
+	    <?php
+	       for ($i = 0; $i < count($projects); $i++) {
+        ?>
+           <h4><a href="/projects/<?php echo $projects[$i][1]; ?>/" /></h4><br />
+        <?php
+	       }
+	    ?>
       </div>
     </div>
     <?php
