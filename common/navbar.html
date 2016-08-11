@@ -10,15 +10,21 @@
     <ul class="right">
       <li class="divider hide-for-small"></li>
       <li class="has-dropdown"><a href="/projects">Projects</a>
-	<ul class="dropdown">
-	  <?php
-	     include_once($_SERVER['DOCUMENT_ROOT'] . "/projects/config.html");
-	     for ($i = 0; $i < count($projects); $i++) {
-	         echo "<li><a href=\"/projects/" . $projects[$i][1] . "\">" . $projects[$i][0] . "</a></li>\n";
-	     }
+	    <ul class="dropdown">
+	      <?php
+	         include_once($_SERVER['DOCUMENT_ROOT'] . "/projects/config.html");
+	         for ($i = 0; $i < count($projects); $i++) {
+	             echo "<li><a href=\"/projects/" . $projects[$i][1] . "\">" . $projects[$i][0] . "</a></li>\n";
+      	     }
 	     ?>
-	</ul>
+	    </ul>
       </li>
+      <li class="divider hide-for-small"></li>
+      <li><a href="/photography">Photography</a></li>
+      <li class="divider hide-for-small"></li>
+      <li><a href="/links">Links</a></li>
+      <li class="divider hide-for-small"></li>
+      <li><a href="/about-me">About Me</a></li>
     </ul>
   </section>
 </nav>
